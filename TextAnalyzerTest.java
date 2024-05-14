@@ -13,7 +13,7 @@ import java.util.Map;
 
 
 public class TextAnalyzerTest {
-		private TextAnalyzer textAnalyzer; // Global variable for TextAnalyzer
+    private TextAnalyzer textAnalyzer; // Global variable for TextAnalyzer
 
     @Before
     public void setUp() {
