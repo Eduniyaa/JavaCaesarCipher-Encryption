@@ -309,6 +309,27 @@ public class TextAnalyzer {
     
         return count;
     }
-    
+    public String findShortestWord(String text) {
+if (text == null || text.isEmpty()) {
+throw new IllegalArgumentException("Text cannot be null or empty.");
+}
+
+// Split the text into words using whitespace as delimiter
+String[] words = text.split("\\W+");
+
+// Initialize a variable to store the shortest word
+String shortestWord = words[0];
+
+// Iterate through each word in the text
+for (String word : words) {
+// Check if the current word is shorter than the current shortest word
+if (word.length() < shortestWord.length()) {
+shortestWord = word;
+}
+}
+
+return shortestWord;
+}
+
 
 }
