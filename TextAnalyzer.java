@@ -31,4 +31,13 @@ public class TextAnalyzer {
             }
         }
     
+        // Check if all letters of the alphabet are present
+        for (boolean present : alphabet) {
+            if (!present) {
+                return false;
+            }
+        }
+    
+        return true;
+    }
 }
