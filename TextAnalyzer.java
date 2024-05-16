@@ -45,4 +45,44 @@ public class TextAnalyzer {
         return text.contains(word);
     }
 
+    /**
+     * Counts the total number of alphabetic characters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of alphabetic characters.
+     */
+    public int countAlphabeticCharacters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for alphabetic characters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is alphabetic
+            if (Character.isLetter(c)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
+    /**
+     * Counts the total number of characters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of characters.
+     */
+    public int countCharacters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null.");
+        }
+    
+        // Return the length of the text
+        return text.length();
+    }
+
 }
