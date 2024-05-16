@@ -110,4 +110,40 @@ public class TextAnalyzer {
     
         return true;
     }
+   /**
+     * Finds the most common word in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The most common word.
+     */
+    public String findMostCommonWord(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into words using whitespace as delimiter
+        String[] words = text.split("\\W+");
+    
+        // Create a map to store word frequencies
+        Map<String, Integer> wordFrequencies = new HashMap<>();
+    
+        // Populate the map with word frequencies
+        for (String word : words) {
+            wordFrequencies.put(word, wordFrequencies.getOrDefault(word, 0) + 1);
+        }
+    
+        // Initialize variables to track the most common word and its frequency
+        String mostCommonWord = "";
+        int maxFrequency = 0;
+    
+        // Find the most common word
+        for (Map.Entry<String, Integer> entry : wordFrequencies.entrySet()) {
+            if (entry.getValue() > maxFrequency) {
+                mostCommonWord = entry.getKey();
+                maxFrequency = entry.getValue();
+            }
+        }
+    
+        return mostCommonWord;
+    }
 }
