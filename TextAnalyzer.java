@@ -84,5 +84,26 @@ public class TextAnalyzer {
         // Calculate word density (words per sentence)
         return numSentences > 0 ? Math.round((float) numWords / numSentences) : 0;
     }
+    
+    /**
+     * Checks if the given text contains only letters (alphabetic characters).
+     * 
+     * @param text The text to analyze.
+     * @return True if the text contains only letters, otherwise false.
+     */
+    public boolean containsOnlyLetters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Check if every character in the text is a letter
+        for (char c : text.toCharArray()) {
+            if (!Character.isLetter(c)) {
+                return false;
+            }
+        }
+    
+        return true;
+    }
 
 }
