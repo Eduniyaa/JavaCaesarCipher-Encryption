@@ -139,5 +139,37 @@ public void testCountUppercaseLetters() {
         assertTrue(true);
     }
 }
+  @Test
+public void testCountVowels() {
+    // Test case 1: Basic case with vowels
+    String text1 = "Hello World!";
+    assertEquals(3, textAnalyzer.countVowels(text1));
+
+    // Test case 2: Case with no vowels
+    String text2 = "hll wrld!";
+    assertEquals(0, textAnalyzer.countVowels(text2));
+
+    // Test case 3: Case with all vowels
+    String text3 = "aeiouAEIOU";
+    assertEquals(10, textAnalyzer.countVowels(text3));
+
+    // Test case 4: Case with empty text
+    String text4 = "";
+    try {
+        textAnalyzer.countVowels(text4);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+
+    // Test case 5: Case with null text
+    String text5 = null;
+    try {
+        textAnalyzer.countVowels(text5);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+}
 
 }
