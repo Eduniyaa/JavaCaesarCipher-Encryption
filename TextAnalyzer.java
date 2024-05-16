@@ -74,4 +74,32 @@ public class TextAnalyzer {
     }
     
     
+    /**
+     * Counts the occurrences of a specific sentence in the given text.
+     * 
+     * @param text The text to search.
+     * @param sentence The sentence to count occurrences for.
+     * @return The number of occurrences of the sentence.
+     */
+    public int countSentenceOccurrences(String text, String sentence) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+        if (sentence == null || sentence.isEmpty()) {
+            throw new IllegalArgumentException("Sentence cannot be null or empty.");
+        }
+    
+        // Initialize a counter for sentence occurrences
+        int count = 0;
+    
+        // Search for sentence occurrences in the text
+        int index = text.indexOf(sentence);
+        while (index != -1) {
+            count++;
+            index = text.indexOf(sentence, index + 1);
+        }
+    
+        return count;
+    }
+    
 }
