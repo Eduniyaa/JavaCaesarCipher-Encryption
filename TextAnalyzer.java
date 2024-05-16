@@ -48,5 +48,30 @@ public class TextAnalyzer {
         return count;
     }
 
+    /**
+     * Counts the total number of numeric characters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of numeric characters.
+     */
+    public int countNumericCharacters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for numeric characters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a numeric character
+            if (Character.isDigit(c)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+    
     
 }
