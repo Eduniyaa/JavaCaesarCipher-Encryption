@@ -96,6 +96,34 @@ public class TextAnalyzer {
     
         return count;
     }
+    /**
+     * Counts the total number of vowels in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of vowels.
+     */
+    public int countVowels(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Convert the text to lowercase to ignore case sensitivity
+        text = text.toLowerCase();
+    
+        // Initialize a counter for vowels
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a vowel
+            if (Character.isLetter(c) && "aeiou".indexOf(c) != -1) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
     
 
 }
