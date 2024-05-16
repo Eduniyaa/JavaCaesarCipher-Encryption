@@ -146,4 +146,31 @@ public class TextAnalyzer {
     
         return mostCommonWord;
     }
+   /**
+     * Finds the longest word in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The longest word.
+     */
+    public String findLongestWord(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into words using a regular expression that includes only alphabetic characters and apostrophes as delimiters
+        String[] words = text.split("\\W+");
+    
+        // Initialize a variable to store the longest word
+        String longestWord = "";
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Check if the current word is longer than the current longest word
+            if (!word.isEmpty() && word.length() > longestWord.length()) {
+                longestWord = word;
+            }
+        }
+    
+        return longestWord;
+    }
 }
