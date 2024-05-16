@@ -82,4 +82,38 @@ public void testCountLowercaseLetters() {
     }
 }
 
+
+  @Test
+public void testCountNumericCharacters() {
+    // Test case 1: Basic case with numeric characters
+    String text1 = "123 Numeric 456";
+    assertEquals(6, textAnalyzer.countNumericCharacters(text1));
+
+    // Test case 2: Case with alphanumeric characters
+    String text2 = "Alphanumeric123";
+    assertEquals(3, textAnalyzer.countNumericCharacters(text2));
+
+    // Test case 3: Case with symbols and special characters
+    String text3 = "!@#$%^&*()";
+    assertEquals(0, textAnalyzer.countNumericCharacters(text3));
+
+    // Test case 4: Case with empty text
+    String text4 = "";
+    try {
+        textAnalyzer.countNumericCharacters(text4);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+
+    // Test case 5: Case with null text
+    String text5 = null;
+    try {
+        textAnalyzer.countNumericCharacters(text5);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+}
+
 }
