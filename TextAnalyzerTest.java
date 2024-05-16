@@ -115,5 +115,43 @@ public void testCountNumericCharacters() {
         assertTrue(true);
     }
 }
+  @Test
+public void testCountSentenceOccurrences() {
+    // Test case 1: Basic case with multiple occurrence
+    String text1 = "This is a test sentence. Another test sentence.";
+    String sentence1 = "test sentence";
+    assertEquals(2, textAnalyzer.countSentenceOccurrences(text1, sentence1));
+
+    // Test case 2: Case with one occurrences
+    String text2 = "One. Two. Three. Four. Five.";
+    String sentence2 = "Three.";
+    assertEquals(1, textAnalyzer.countSentenceOccurrences(text2, sentence2));
+
+    // Test case 3: Case with no occurrence
+    String text3 = "No occurrences here.";
+    String sentence3 = "test";
+    assertEquals(0, textAnalyzer.countSentenceOccurrences(text3, sentence3));
+
+    // Test case 4: Case with empty text
+    String text4 = "";
+    String sentence4 = "test";
+    try {
+        textAnalyzer.countSentenceOccurrences(text4, sentence4);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+
+    // Test case 5: Case with null text
+    String text5 = null;
+    String sentence5 = "test";
+    try {
+        textAnalyzer.countSentenceOccurrences(text5, sentence5);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+}
+
 
 }
