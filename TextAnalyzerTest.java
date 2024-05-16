@@ -40,4 +40,36 @@ public class TextAnalyzerTest {
             assertTrue(true);
         }
     }
+       @Test
+    public void testFindShortestWord() {
+        // Test case 1: Basic case with one word
+        String text1 = "This is a test.";
+        String shortestWord1 = textAnalyzer.findShortestWord(text1);
+        assertEquals("a", shortestWord1);
+    
+        // Test case 2: Basic case with multiple words
+        String text2 = "The quick brown fox jumps over the lazy dog.";
+        String shortestWord2 = textAnalyzer.findShortestWord(text2);
+        assertEquals("The", shortestWord2);
+    
+        // Test case 3: Empty string
+        String text3 = "";
+        try {
+            textAnalyzer.findShortestWord(text3);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 4: Single word
+        String text4 = "Hello";
+        String shortestWord4 = textAnalyzer.findShortestWord(text4);
+        assertEquals("Hello", shortestWord4);
+    
+        // Test case 5: Shortest word in the middle
+        String text5 = "The cat is on the mat.";
+        String shortestWord5 = textAnalyzer.findShortestWord(text5);
+        assertEquals("is", shortestWord5);
+    }
+
 }
