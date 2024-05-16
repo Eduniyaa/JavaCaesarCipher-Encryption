@@ -79,4 +79,70 @@ public class TextAnalyzerTest {
         }
     }
 
+    @Test
+    public void testCountAlphabeticCharacters() {
+        // Test case 1: Basic case with alphabetic characters
+        String text1 = "This is a test with 123 numbers";
+        assertEquals(22, textAnalyzer.countAlphabeticCharacters(text1));
+    
+        // Test case 2: Case with only alphabetic characters
+        String text2 = "OnlyAlphabeticCharacters";
+        assertEquals(24, textAnalyzer.countAlphabeticCharacters(text2));
+    
+        // Test case 3: Case with no alphabetic characters
+        String text3 = "1234567890";
+        assertEquals(0, textAnalyzer.countAlphabeticCharacters(text3));
+    
+        // Test case 4: Case with empty text
+        String text4 = "";
+        try {
+            textAnalyzer.countAlphabeticCharacters(text4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.countAlphabeticCharacters(text5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
+    @Test
+    public void testCountCharacters() {
+        // Test case 1: Basic case with characters
+        String text1 = "This is a test.";
+        assertEquals(15, textAnalyzer.countCharacters(text1));
+    
+        // Test case 2: Case with empty text
+        String text2 = "";
+        try {
+            textAnalyzer.countCharacters(text2);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 3: Case with null text
+        String text3 = null;
+        try {
+            textAnalyzer.countCharacters(text3);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 4: Case with special characters
+        String text4 = "!@#$%^&*()_+";
+        assertEquals(12, textAnalyzer.countCharacters(text4));
+    
+        // Test case 5: Case with numbers
+        String text5 = "1234567890";
+        assertEquals(10, textAnalyzer.countCharacters(text5));
+    }
+
 }
