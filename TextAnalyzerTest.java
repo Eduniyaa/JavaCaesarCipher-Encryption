@@ -41,4 +41,38 @@ public void testCountSentences() {
         assertTrue(true);
     }
 }
+  
+@Test
+public void testCountSpaces() {
+    // Test case 1: Basic case with spaces between words
+    String text1 = "This is a test sentence.";
+    assertEquals(4, textAnalyzer.countSpaces(text1));
+
+    // Test case 2: Case with no spaces
+    String text2 = "NoSpacesHere";
+    assertEquals(0, textAnalyzer.countSpaces(text2));
+
+    // Test case 3: Case with multiple spaces
+    String text3 = "   Too   many   spaces   ";
+    assertEquals(12, textAnalyzer.countSpaces(text3));
+
+    // Test case 4: Case with empty text
+    String text4 = "";
+    try {
+        textAnalyzer.countSpaces(text4);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+
+    // Test case 5: Case with null text
+    String text5 = null;
+    try {
+        textAnalyzer.countSpaces(text5);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+}
+
 }
