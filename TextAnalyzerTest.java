@@ -41,4 +41,42 @@ public class TextAnalyzerTest {
         }
     }
 
+    @Test
+    public void testContainsWord() {
+        // Test case 1: Basic case with word present
+        String text1 = "This contains the word test";
+        String word1 = "test";
+        assertTrue(textAnalyzer.containsWord(text1, word1));
+
+        // Test case 2: Case with word not present
+        String text2 = "This does not contain the word eample";
+        String word2 = "example";
+        assertFalse(textAnalyzer.containsWord(text2, word2));
+    
+        // Test case 3: Case with word partially present
+        String text3 = "This is a test";
+        String word3 = "testing";
+        assertFalse(textAnalyzer.containsWord(text3, word3));
+    
+        // Test case 4: Case with empty text
+        String text4 = "";
+        String word4 = "test";
+        try {
+            textAnalyzer.containsWord(text4, word4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with empty word
+        String text5 = "This is a test";
+        String word5 = "";
+        try {
+            textAnalyzer.containsWord(text5, word5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 }
