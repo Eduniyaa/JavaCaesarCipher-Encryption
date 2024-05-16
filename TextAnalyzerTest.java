@@ -145,4 +145,37 @@ public class TextAnalyzerTest {
         assertEquals(10, textAnalyzer.countCharacters(text5));
     }
 
+    @Test
+    public void testCountConsonants() {
+        // Test case 1: Basic case with consonants
+        String text1 = "Hello World";
+        assertEquals(7, textAnalyzer.countConsonants(text1));
+
+        // Test case 2: Case with no consonants
+        String text2 = "aeiou";
+        assertEquals(0, textAnalyzer.countConsonants(text2));
+
+        // Test case 3: Case with empty text
+        String text3 = "";
+        try {
+            textAnalyzer.countConsonants(text3);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+
+        // Test case 4: Case with null text
+        String text4 = null;
+        try {
+            textAnalyzer.countConsonants(text4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with mixed characters
+        String text5 = "H3ll0 W0r1d";
+        assertEquals(6, textAnalyzer.countConsonants(text5));
+    }
+
 }
