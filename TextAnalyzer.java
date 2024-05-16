@@ -67,5 +67,33 @@ public class TextAnalyzer {
     
         return shortestWord;
     }
+/**
+     * Finds all palindromes in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return A list of palindromes found in the text.
+     */
+    public List<String> findPalindromes(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into words using a regular expression that includes only alphabetic characters as delimiters
+        String[] words = text.split("\\W+");
+    
+        // Initialize a list to store palindromes
+        List<String> palindromes = new ArrayList<>();
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Remove punctuation from the word
+            word = word.replaceAll("[^a-zA-Z]", "");
+            // Check if the word is a palindrome (case insensitive)
+            if (!word.isEmpty() && isPalindrome(word.toLowerCase()) && word.length() != 1) {
+                palindromes.add(word);
+            }
+        }
+            return palindromes;
+    }
 
 }
