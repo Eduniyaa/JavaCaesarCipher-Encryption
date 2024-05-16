@@ -64,4 +64,25 @@ public class TextAnalyzer {
         return frequencyMap;
     }
 
+    /**
+     * Calculates the word density (words per sentence) in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The word density of the text.
+     */
+    public int calculateWordDensity(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Count the number of words
+        int numWords = text.split("\\W+").length;
+    
+        // Count the number of sentences
+        int numSentences = text.split("[.!?]+").length;
+    
+        // Calculate word density (words per sentence)
+        return numSentences > 0 ? Math.round((float) numWords / numSentences) : 0;
+    }
+
 }
