@@ -46,5 +46,56 @@ public class TextAnalyzer {
     
         return count;
     }
+   
+    /**
+     * Counts the total number of special characters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of special characters.
+     */
+    public int countSpecialCharacters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for special characters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a special character
+            if (!Character.isLetterOrDigit(c) && !Character.isWhitespace(c)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
+    /**
+     * Counts the total number of uppercase letters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of uppercase letters.
+     */
+    public int countUppercaseLetters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for uppercase letters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is an uppercase letter
+            if (Character.isUpperCase(c)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+    
 
 }
