@@ -35,4 +35,33 @@ public class TextAnalyzer {
         return totalWords > 0 ? Math.round((float) totalCharacters / totalWords) : 0;
     }
 
+    /**
+     * Calculates the frequency of each letter in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return A map containing each letter and its frequency.
+     */
+    public Map<Character, Integer> calculateLetterFrequency(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Create a map to store letter frequencies
+        Map<Character, Integer> frequencyMap = new HashMap<>();
+    
+        // Convert the text to lowercase to ignore case sensitivity
+        text = text.toLowerCase();
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a letter
+            if (Character.isLetter(c)) {
+                // Update the frequency map
+                frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
+            }
+        }
+    
+        return frequencyMap;
+    }
+
 }
