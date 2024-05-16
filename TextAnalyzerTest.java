@@ -45,4 +45,41 @@ public void testCountLines() {
     String text5 = "Line 1\nLine 2\r\nLine 3\rLine 4";
     assertEquals(3, textAnalyzer.countLines(text5));
 }
+  @Test
+public void testCountLowercaseLetters() {
+    // Test case 1: Basic case with lowercase letters
+    String text1 = "lowercase text";
+    assertEquals(13, textAnalyzer.countLowercaseLetters(text1));
+
+    // Test case 2: Case with uppercase letters only
+    String text2 = "UPPERCASE TEXT";
+    assertEquals(0, textAnalyzer.countLowercaseLetters(text2));
+
+    // Test case 3: Case with mixed lowercase and uppercase letters
+    String text3 = "MixedCase Text";
+    assertEquals(10, textAnalyzer.countLowercaseLetters(text3));
+
+    // Test case 4: Case with numbers and symbols
+    String text4 = "123 Symbols #";
+    assertEquals(6, textAnalyzer.countLowercaseLetters(text4));
+
+    // Test case 5: Case with empty text
+    String text5 = "";
+    try {
+        textAnalyzer.countLowercaseLetters(text5);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+
+    // Test case 6: Case with null text
+    String text6 = null;
+    try {
+        textAnalyzer.countLowercaseLetters(text6);
+        fail("Expected IllegalArgumentException");
+    } catch (IllegalArgumentException e) {
+        assertTrue(true);
+    }
+}
+
 }
