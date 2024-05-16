@@ -71,5 +71,37 @@ public class TextAnalyzerTest {
         String shortestWord5 = textAnalyzer.findShortestWord(text5);
         assertEquals("is", shortestWord5);
     }
+   @Test
+    public void testFindPalindromes() {
+        // Test case 1: Basic case with a single palindrome
+        String text1 = "Able was I ere I saw Elba";
+        List<String> expected1 = Arrays.asList("ere");
+        assertEquals(expected1, textAnalyzer.findPalindromes(text1));
+    
+        // Test case 2: Case with no palindrome
+        String text2 = "Hello World";
+        List<String> expected2 = new ArrayList<>();
+        assertEquals(expected2, textAnalyzer.findPalindromes(text2));
+    
+        // Test case 3: Case with mixed-case palindrome
+        String text3 = "Abba";
+        List<String> expected3 = Arrays.asList("Abba");
+        assertEquals(expected3, textAnalyzer.findPalindromes(text3));
+    
+        // Test case 4: Case with multiple palindromes
+        String text4 = "A man, a plan, a canal, Panama!";
+        List<String> expected4 = new ArrayList<>();
+        assertEquals(expected4, textAnalyzer.findPalindromes(text4));
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.findPalindromes(text5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 
 }
