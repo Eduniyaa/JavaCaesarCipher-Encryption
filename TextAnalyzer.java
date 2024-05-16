@@ -22,4 +22,29 @@ public class TextAnalyzer {
         // Return the total number of sentences
         return sentences.length;
     }
+     /**
+     * Counts the total number of spaces in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of spaces.
+     */
+    public int countSpaces(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null.");
+        }
+    
+        // Initialize a counter for spaces
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a space
+            if (c == ' ') {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
 }
