@@ -13,4 +13,32 @@ import java.util.Map;
 
 
 public class TextAnalyzerTest {
+  @Test
+    public void testAverageWordLength() {
+        // Test case 1: a single word
+        assertEquals(5, textAnalyzer.averageWordLength("Hello"));
+
+        // Test case 2: multiple words
+        assertEquals(4, textAnalyzer.averageWordLength("The quick brown fox"));
+
+        // Test case 3: punctuation and special characters
+        assertEquals(5, textAnalyzer.averageWordLength("Hello, world!"));
+
+        // Test case 4: empty text
+        try {
+            textAnalyzer.averageWordLength("");
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+
+        // Test case 5: null text
+        try {
+            textAnalyzer.averageWordLength(null);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 }
