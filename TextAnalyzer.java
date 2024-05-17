@@ -105,5 +105,37 @@ public class TextAnalyzer {
     
         return true;
     }
+    
+    /**
+     * Counts the number of words in the given text that start with a specific letter.
+     * 
+     * @param text The text to analyze.
+     * @param letter The letter to check for at the beginning of words.
+     * @return The number of words starting with the specified letter.
+     */
+    public int countWordsStartingWithLetter(String text, char letter) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Convert the text to lowercase to ignore case sensitivity
+        text = text.toLowerCase();
+    
+        // Split the text into words using whitespace as delimiter
+        String[] words = text.split("\\W+");
+    
+        // Initialize a counter for words starting with the specified letter
+        int count = 0;
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Check if the word starts with the specified letter
+            if (!word.isEmpty() && word.charAt(0) == Character.toLowerCase(letter)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
 
 }
