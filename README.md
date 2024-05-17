@@ -147,7 +147,7 @@ For any inquiries or feedback, please contact the members of the development tea
     - Email: danielkindeya19@gmail.com
     - GitHub: [Danielkindeya](https://github.com/Danielkindeya)
   - **Eden Werke**
-    - Email: @gmail.com
+    - Email: edenw6292@gmail.com
     - GitHub: [edenWerke](https://github.com/edenWerke)
   - **Eduniya Ambachew**
     - Email: @gmail.com
