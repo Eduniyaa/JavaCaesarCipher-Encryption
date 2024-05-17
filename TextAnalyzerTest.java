@@ -115,4 +115,32 @@ public class TextAnalyzerTest {
         assertEquals(0, textAnalyzer.calculateWordDensity(text4));
     }
 
+    @Test
+    public void testContainsOnlyLetters() {
+        // Test case 1: Basic case with only letters
+        String text1 = "ThisIsATest";
+        assertTrue(textAnalyzer.containsOnlyLetters(text1));
+    
+        // Test case 2: Case with letters and spaces
+        String text2 = "This Is A Test";
+        assertFalse(textAnalyzer.containsOnlyLetters(text2));
+    
+        // Test case 3: Case with letters and numbers
+        String text3 = "ThisIsA123Test";
+        assertFalse(textAnalyzer.containsOnlyLetters(text3));
+    
+        // Test case 4: Case with special characters
+        String text4 = "!@#$%^&*()";
+        assertFalse(textAnalyzer.containsOnlyLetters(text4));
+    
+        // Test case 5: Case with empty text
+        String text5 = "";
+        try {
+            textAnalyzer.containsOnlyLetters(text5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 }
