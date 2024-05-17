@@ -179,6 +179,39 @@ public class TextAnalyzerTest {
     }
 
     @Test
+    public void testCountWords() {
+        // Test case 1: Basic case with single word
+        String text1 = "Hello";
+        assertEquals(1, textAnalyzer.countWords(text1));
+    
+        // Test case 2: Case with multiple words
+        String text2 = "Hello World!";
+        assertEquals(2, textAnalyzer.countWords(text2));
+    
+        // Test case 3: Case with no words (empty string)
+        String text3 = "";
+        try {
+            textAnalyzer.countWords(text3);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 4: Case with null text
+        String text4 = null;
+        try {
+            textAnalyzer.countWords(text4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with text containing only whitespaces
+        String text5 = "      ";
+        assertEquals(0, textAnalyzer.countWords(text5));
+    }
+    
+    @Test
     public void testCountWordOccurrences() {
         // Test case 1: Basic case with single occurrence
         String text1 = "Hello World!";
