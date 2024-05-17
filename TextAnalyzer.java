@@ -114,6 +114,24 @@ public class TextAnalyzer {
     }
 
     /**
+     * Counts the total number of words in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of words.
+     */
+    public int countWords(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into words using whitespace as delimiter
+        String[] words = text.split("\\W+");
+    
+        // Return the total number of words
+        return words.length;
+    }
+
+    /**
      * Counts the occurrences of a specific word in the given text.
      * 
      * @param text The text to search.
