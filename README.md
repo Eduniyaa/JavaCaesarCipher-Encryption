@@ -156,7 +156,7 @@ For any inquiries or feedback, please contact the members of the development tea
     - Email: filimon.haftomh@haftomhgmail.com
     - GitHub: [phila-hh](https://github.com/phila-hh)
   - **Nardos Zemariam**
-    - Email: @gmail.com
+    - Email: nardoszemariatesfaym@gmail.com
     - GitHub: [nardoszemariamtesfay](https://github.com/nardoszemariamtesfay)
 
 Feel free to reach out for assistance, feedback, or collaboration!
