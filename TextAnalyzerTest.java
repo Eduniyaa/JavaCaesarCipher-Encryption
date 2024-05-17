@@ -171,5 +171,47 @@ public void testCountVowels() {
         assertTrue(true);
     }
 }
+  @Test
+    public void testCountWordsOfLength() {
+        // Test case 1: Basic case with single word of the specified length
+        String text1 = "Hello";
+        assertEquals(1, textAnalyzer.countWordsOfLength(text1, 5));
+    
+        // Test case 2: Case with multiple words, some of which have the specified length
+        String text2 = "Hello Worlds!";
+        assertEquals(1, textAnalyzer.countWordsOfLength(text2, 5));
+    
+        // Test case 3: Case with multiple words, none of which have the specified length
+        String text3 = "Hello World";
+        assertEquals(0, textAnalyzer.countWordsOfLength(text3, 7));
+    
+        // Test case 4: Case with no words (empty string)
+        String text4 = "";
+        try {
+            textAnalyzer.countWordsOfLength(text4, 5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.countWordsOfLength(text5, 5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 6: Case with negative word length
+        String text6 = "Hello World";
+        try {
+            textAnalyzer.countWordsOfLength(text6, -5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 
 }
