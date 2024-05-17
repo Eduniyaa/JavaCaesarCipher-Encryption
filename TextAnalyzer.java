@@ -102,4 +102,33 @@ public class TextAnalyzer {
         return count;
     }
     
+    /**
+     * Counts the number of words in the given text that end with a specific letter.
+     * 
+     * @param text The text to analyze.
+     * @param letter The letter to check for at the end of words.
+     * @return The number of words ending with the specified letter.
+     */
+    public int countWordsEndingWithLetter(String text, char letter) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into words using a regular expression that includes only alphabetic characters and apostrophes as delimiters
+        String[] words = text.split("\\W+");
+    
+        // Initialize a counter for words ending with the specified letter
+        int count = 0;
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Check if the last character of the word is the specified letter
+            if (!word.isEmpty() && word.charAt(word.length() - 1) == letter) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
 }
