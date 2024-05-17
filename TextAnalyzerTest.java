@@ -135,5 +135,36 @@ public class TextAnalyzerTest {
             assertTrue(true);
         }
     }
+    @Test
+    public void testFindLongestWord() {
+        // Test case 1: Basic case with single word
+        String text1 = "Hello";
+        assertEquals("Hello", textAnalyzer.findLongestWord(text1));
     
+        // Test case 2: Case with multiple words, one of which is the longest
+        String text2 = "Hello World!";
+        assertEquals("Hello", textAnalyzer.findLongestWord(text2));
+    
+        // Test case 3: Case with multiple words, where there are two longest words
+        String text3 = "Hello World";
+        assertEquals("Hello", textAnalyzer.findLongestWord(text3));
+    
+        // Test case 4: Case with no words (empty string)
+        String text4 = "";
+        try {
+            textAnalyzer.findLongestWord(text4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.findLongestWord(text5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
 }
