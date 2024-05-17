@@ -178,4 +178,46 @@ public class TextAnalyzerTest {
         assertEquals(6, textAnalyzer.countConsonants(text5));
     }
 
+    @Test
+    public void testCountWordOccurrences() {
+        // Test case 1: Basic case with single occurrence
+        String text1 = "Hello World!";
+        assertEquals(1, textAnalyzer.countWordOccurrences(text1, "hello"));
+    
+        // Test case 2: Case with multiple occurrences
+        String text2 = "Java is a programming language. Java is widely used.";
+        assertEquals(2, textAnalyzer.countWordOccurrences(text2, "java"));
+    
+        // Test case 3: Case with no occurrences
+        String text3 = "This is a test.";
+        assertEquals(0, textAnalyzer.countWordOccurrences(text3, "hello"));
+    
+        // Test case 4: Case with empty text
+        String text4 = "";
+        try {
+            textAnalyzer.countWordOccurrences(text4, "hello");
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.countWordOccurrences(text5, "hello");
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 6: Case with empty word
+        String text6 = "This is a test.";
+        try {
+            textAnalyzer.countWordOccurrences(text6, "");
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+
 }
