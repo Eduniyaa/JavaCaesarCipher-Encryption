@@ -107,19 +107,19 @@ java TextAnalyzerCLI
 
 To run the JUnit tests, use the following command:
 
-	#### Windows
+#### Windows
 
-		```bash
-		java -cp ".;JAR Files/*" org.junit.runner.JUnitCore TextAnalyzerTest
-	```
+```bash
+java -cp ".;JAR Files/*" org.junit.runner.JUnitCore TextAnalyzerTest
+```
 
-	#### Linux
+#### Linux
 
-	```bash
-	java -cp ".:JAR Files/*" org.junit.runner.JUnitCore TextAnalyzerTest
-	```
+```bash
+java -cp ".:JAR Files/*" org.junit.runner.JUnitCore TextAnalyzerTest
+```
 
-This will execute all the test cases defined in `TextAnalyzerTest.java`(./TextAnalyzerTest.java) and display the results in the console.
+This will execute all the test cases defined in [`TextAnalyzerTest.java`](./TextAanlyzerTest.java) and display the results in the console.
 
 ---
 
