@@ -140,9 +140,6 @@ If you want to add more functionalities or improve on the already existing ones,
 For any inquiries or feedback, please contact the members of the development team:
 
 - **Team Members**:
-  - **Ahsan Mohammed**
-    - Email: @gmail.com
-    - GitHub: [](https://github.com/)
   - **Daniel Kindeya**
     - Email: danielkindeya19@gmail.com
     - GitHub: [Danielkindeya](https://github.com/Danielkindeya)
