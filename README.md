@@ -150,7 +150,7 @@ For any inquiries or feedback, please contact the members of the development tea
     - Email: edenw6292@gmail.com
     - GitHub: [edenWerke](https://github.com/edenWerke)
   - **Eduniya Ambachew**
-    - Email: @gmail.com
+    - Email: ambachewedu@gmail.com
     - GitHub: [Eduniyaa](https://github.com/Eduniyaa)
   - **Filimon Haftom**
     - Email: filimon.haftomh@haftomhgmail.com
