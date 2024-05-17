@@ -113,4 +113,41 @@ public class TextAnalyzer {
         return count;
     }
 
+    /**
+     * Counts the occurrences of a specific word in the given text.
+     * 
+     * @param text The text to search.
+     * @param word The word to count occurrences for.
+     * @return The number of occurrences of the word.
+     */
+    public int countWordOccurrences(String text, String word) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+        if (word == null || word.isEmpty()) {
+            throw new IllegalArgumentException("Word cannot be null or empty.");
+        }
+    
+        // Convert text and word to lowercase
+        text = text.toLowerCase();
+        word = word.toLowerCase();
+    
+        // Split the text into words using non-alphabetic characters and apostrophes as delimiters,
+        // but exclude apostrophes used in quotations
+        String[] words = text.split("\\W+");
+    
+        // Initialize a counter for word occurrences
+        int count = 0;
+    
+        // Iterate through each word in the text
+        for (String w : words) {
+            // Check if the word matches the specified word (case insensitive)
+            if (w.equals(word)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
 }
