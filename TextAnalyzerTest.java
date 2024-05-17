@@ -103,5 +103,37 @@ public class TextAnalyzerTest {
         }
     }
 
-
+@Test
+    public void testFindMostCommonWord() {
+        // Test case 1: Basic case with single word
+        String text1 = "Hello";
+        assertEquals("Hello", textAnalyzer.findMostCommonWord(text1));
+    
+        // Test case 2: Case with multiple words, one of which is the most common
+        String text2 = "Hello World! Hello";
+        assertEquals("Hello", textAnalyzer.findMostCommonWord(text2));
+    
+        // Test case 3: Case with multiple words, where there are multiple words with the same frequency
+        String text3 = "Hello World Hello World!";
+        assertEquals("Hello", textAnalyzer.findMostCommonWord(text3));
+    
+        // Test case 4: Case with no words (empty string)
+        String text4 = "";
+        try {
+            textAnalyzer.findMostCommonWord(text4);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.findMostCommonWord(text5);
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+    
 }
