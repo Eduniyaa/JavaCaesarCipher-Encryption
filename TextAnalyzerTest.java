@@ -143,4 +143,37 @@ public class TextAnalyzerTest {
         }
     }
 
+    @Test
+    public void testCountWordsStartingWithLetter() {
+        // Test case 1: Basic case with single word starting with the specified letter
+        String text1 = "Hello";
+        assertEquals(1, textAnalyzer.countWordsStartingWithLetter(text1, 'H'));
+    
+        // Test case 2: Case with multiple words, some of which start with the specified letter
+        String text2 = "Hello World!";
+        assertEquals(1, textAnalyzer.countWordsStartingWithLetter(text2, 'W'));
+    
+        // Test case 3: Case with multiple words, none of which start with the specified letter
+        String text3 = "hello world";
+        assertEquals(0, textAnalyzer.countWordsStartingWithLetter(text3, 'r'));
+    
+        // Test case 4: Case with no words (empty string)
+        String text4 = "";
+        try {
+            textAnalyzer.countWordsStartingWithLetter(text4, 'H');
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.countWordsStartingWithLetter(text5, 'H');
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+    
 }
