@@ -153,5 +153,37 @@ public void testCountSentenceOccurrences() {
     }
 }
 
-
+    @Test
+    public void testCountWordsEndingWithLetter() {
+        // Test case 1: Basic case with single word ending with the specified letter
+        String text1 = "Hello";
+        assertEquals(1, textAnalyzer.countWordsEndingWithLetter(text1, 'o'));
+    
+        // Test case 2: Case with multiple words, one of which ends with the specified letter
+        String text2 = "Hello World!";
+        assertEquals(1, textAnalyzer.countWordsEndingWithLetter(text2, 'o'));
+    
+        // Test case 3: Case with multiple words, none of which end with the specified letter
+        String text3 = "Hello World";
+        assertEquals(0, textAnalyzer.countWordsEndingWithLetter(text3, 'f'));
+    
+        // Test case 4: Case with no words (empty string)
+        String text4 = "";
+        try {
+            textAnalyzer.countWordsEndingWithLetter(text4, 'o');
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    
+        // Test case 5: Case with null text
+        String text5 = null;
+        try {
+            textAnalyzer.countWordsEndingWithLetter(text5, 'o');
+            fail("Expected IllegalArgumentException");
+        } catch (IllegalArgumentException e) {
+            assertTrue(true);
+        }
+    }
+    
 }
