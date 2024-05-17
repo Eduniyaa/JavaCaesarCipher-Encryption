@@ -123,6 +123,38 @@ public class TextAnalyzer {
     
         return count;
     }
+    /**
+     * Counts the number of words in the given text that have a specific length.
+     * 
+     * @param text The text to analyze.
+     * @param length The length of words to count.
+     * @return The number of words with the specified length.
+     */
+    public int countWordsOfLength(String text, int length) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+        if (length < 0) {
+            throw new IllegalArgumentException("Word length cannot be negative.");
+        }
+    
+        // Split the text into words using a regular expression that includes only alphabetic characters and apostrophes as delimiters
+        String[] words = text.split("\\W+");
+    
+        // Initialize a counter for words of the specified length
+        int count = 0;
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Check if the length of the word matches the specified length
+            if (!word.isEmpty() && word.length() == length) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+    
 
     
 
