@@ -140,23 +140,20 @@ If you want to add more functionalities or improve on the already existing ones,
 For any inquiries or feedback, please contact the members of the development team:
 
 - **Team Members**:
-  - **Ahsan Mohammed**
-    - Email: @gmail.com
-    - GitHub: [](https://github.com/)
   - **Daniel Kindeya**
     - Email: danielkindeya19@gmail.com
     - GitHub: [Danielkindeya](https://github.com/Danielkindeya)
   - **Eden Werke**
-    - Email: @gmail.com
+    - Email: edenw6292@gmail.com
     - GitHub: [edenWerke](https://github.com/edenWerke)
   - **Eduniya Ambachew**
-    - Email: @gmail.com
+    - Email: ambachewedu@gmail.com
     - GitHub: [Eduniyaa](https://github.com/Eduniyaa)
   - **Filimon Haftom**
     - Email: filimon.haftomh@haftomhgmail.com
     - GitHub: [phila-hh](https://github.com/phila-hh)
   - **Nardos Zemariam**
-    - Email: nardoszemariatesfay12@gmail.com
+    - Email:nardoszemariamtesfay12@gmail.com
     - GitHub: [nardoszemariamtesfay](https://github.com/nardoszemariamtesfay)
 
 Feel free to reach out for assistance, feedback, or collaboration!

@@ -3,7 +3,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class TextAnalyzerCLI {
-
     /**
      * Reads text from a file specified by the provided file path.
      *
