@@ -15,14 +15,14 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using non-alphabetic characters as delimiter
         String[] words = text.split("\\W+");
-    
+
         // Initialize variables to store total characters and total words
         int totalCharacters = 0;
         int totalWords = 0;
-    
+
         // Calculate total characters in all words and total number of words
         for (String word : words) {
             if (!word.isEmpty()) { // Exclude empty strings
@@ -30,7 +30,7 @@ public class TextAnalyzer {
                 totalWords++;
             }
         }
-    
+
         // Calculate average word length
         return totalWords > 0 ? Math.round((float) totalCharacters / totalWords) : 0;
     }
@@ -45,13 +45,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Create a map to store letter frequencies
         Map<Character, Integer> frequencyMap = new HashMap<>();
-    
+
         // Convert the text to lowercase to ignore case sensitivity
         text = text.toLowerCase();
-    
+
         // Iterate through each character in the text
         for (char c : text.toCharArray()) {
             // Check if the character is a letter
@@ -60,7 +60,7 @@ public class TextAnalyzer {
                 frequencyMap.put(c, frequencyMap.getOrDefault(c, 0) + 1);
             }
         }
-    
+
         return frequencyMap;
     }
 
@@ -74,17 +74,17 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Count the number of words
         int numWords = text.split("\\W+").length;
-    
+
         // Count the number of sentences
         int numSentences = text.split("[.!?]+").length;
-    
+
         // Calculate word density (words per sentence)
         return numSentences > 0 ? Math.round((float) numWords / numSentences) : 0;
     }
-    
+
     /**
      * Checks if the given text contains only letters (alphabetic characters).
      * 
@@ -95,14 +95,14 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Check if every character in the text is a letter
         for (char c : text.toCharArray()) {
             if (!Character.isLetter(c)) {
                 return false;
             }
         }
-    
+
         return true;
     }
 
@@ -116,14 +116,14 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Check if the text contains any numeric characters
         for (char c : text.toCharArray()) {
             if (Character.isDigit(c)) {
                 return true;
             }
         }
-    
+
         return false;
     }
 
@@ -141,7 +141,7 @@ public class TextAnalyzer {
         if (word == null || word.isEmpty()) {
             throw new IllegalArgumentException("Word cannot be null or empty.");
         }
-    
+
         // Check if the text contains the specified word
         return text.contains(word);
     }
@@ -156,10 +156,10 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Initialize a counter for alphabetic characters
         int count = 0;
-    
+
         // Iterate through each character in the text
         for (char c : text.toCharArray()) {
             // Check if the character is alphabetic
@@ -167,7 +167,7 @@ public class TextAnalyzer {
                 count++;
             }
         }
-    
+
         return count;
     }
 
@@ -181,7 +181,7 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null.");
         }
-    
+
         // Return the length of the text
         return text.length();
     }
@@ -196,13 +196,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Convert the text to lowercase to ignore case sensitivity
         text = text.toLowerCase();
-    
+
         // Initialize a counter for consonants
         int count = 0;
-    
+
         // Iterate through each character in the text
         for (char c : text.toCharArray()) {
             // Check if the character is a consonant
@@ -210,10 +210,106 @@ public class TextAnalyzer {
                 count++;
             }
         }
+
+        return count;
+    }
+
+    /**
+     * Counts the total number of lines in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of lines.
+     */
+    public int countLines(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Split the text into lines using the newline character as delimiter
+        String[] lines = text.split("\\r?\\n");
+    
+        // Return the total number of lines
+        return lines.length;
+    }
+
+    /**
+     * Counts the total number of lowercase letters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of lowercase letters.
+     */
+    public int countLowercaseLetters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for lowercase letters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a lowercase letter
+            if (Character.isLowerCase(c)) {
+                count++;
+            }
+        }
     
         return count;
     }
 
+    /**
+     * Counts the total number of numeric characters in the given text.
+     * 
+     * @param text The text to analyze.
+     * @return The total number of numeric characters.
+     */
+    public int countNumericCharacters(String text) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+    
+        // Initialize a counter for numeric characters
+        int count = 0;
+    
+        // Iterate through each character in the text
+        for (char c : text.toCharArray()) {
+            // Check if the character is a numeric character
+            if (Character.isDigit(c)) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+    
+    /**
+     * Counts the occurrences of a specific sentence in the given text.
+     * 
+     * @param text The text to search.
+     * @param sentence The sentence to count occurrences for.
+     * @return The number of occurrences of the sentence.
+     */
+    public int countSentenceOccurrences(String text, String sentence) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
+        if (sentence == null || sentence.isEmpty()) {
+            throw new IllegalArgumentException("Sentence cannot be null or empty.");
+        }
+    
+        // Initialize a counter for sentence occurrences
+        int count = 0;
+    
+        // Search for sentence occurrences in the text
+        int index = text.indexOf(sentence);
+        while (index != -1) {
+            count++;
+            index = text.indexOf(sentence, index + 1);
+        }
+    
+        return count;
+    }
+ 
     /**
      * Counts the occurrences of a specific word in the given text.
      * 
@@ -228,18 +324,18 @@ public class TextAnalyzer {
         if (word == null || word.isEmpty()) {
             throw new IllegalArgumentException("Word cannot be null or empty.");
         }
-    
+
         // Convert text and word to lowercase
         text = text.toLowerCase();
         word = word.toLowerCase();
-    
+
         // Split the text into words using non-alphabetic characters and apostrophes as delimiters,
         // but exclude apostrophes used in quotations
         String[] words = text.split("\\W+");
-    
+
         // Initialize a counter for word occurrences
         int count = 0;
-    
+
         // Iterate through each word in the text
         for (String w : words) {
             // Check if the word matches the specified word (case insensitive)
@@ -247,7 +343,7 @@ public class TextAnalyzer {
                 count++;
             }
         }
-    
+
         return count;
     }
 
@@ -261,14 +357,43 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using whitespace as delimiter
         String[] words = text.split("\\W+");
-    
+
         // Return the total number of words
         return words.length;
     }
+
+    /**
+     * Counts the number of words in the given text that end with a specific letter.
+     * 
+     * @param text The text to analyze.
+     * @param letter The letter to check for at the end of words.
+     * @return The number of words ending with the specified letter.
+     */
+    public int countWordsEndingWithLetter(String text, char letter) {
+        if (text == null || text.isEmpty()) {
+            throw new IllegalArgumentException("Text cannot be null or empty.");
+        }
     
+        // Split the text into words using a regular expression that includes only alphabetic characters and apostrophes as delimiters
+        String[] words = text.split("\\W+");
+    
+        // Initialize a counter for words ending with the specified letter
+        int count = 0;
+    
+        // Iterate through each word in the text
+        for (String word : words) {
+            // Check if the last character of the word is the specified letter
+            if (!word.isEmpty() && word.charAt(word.length() - 1) == letter) {
+                count++;
+            }
+        }
+    
+        return count;
+    }
+
     /**
      * Counts the number of words in the given text that start with a specific letter.
      * 
@@ -280,16 +405,16 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Convert the text to lowercase to ignore case sensitivity
         text = text.toLowerCase();
-    
+
         // Split the text into words using whitespace as delimiter
         String[] words = text.split("\\W+");
-    
+
         // Initialize a counter for words starting with the specified letter
         int count = 0;
-    
+
         // Iterate through each word in the text
         for (String word : words) {
             // Check if the word starts with the specified letter
@@ -297,7 +422,7 @@ public class TextAnalyzer {
                 count++;
             }
         }
-    
+
         return count;
     }
 
@@ -311,13 +436,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using a regular expression that includes only alphabetic characters and apostrophes as delimiters
         String[] words = text.split("\\W+");
-    
+
         // Initialize a variable to store the longest word
         String longestWord = "";
-    
+
         // Iterate through each word in the text
         for (String word : words) {
             // Check if the current word is longer than the current longest word
@@ -325,7 +450,7 @@ public class TextAnalyzer {
                 longestWord = word;
             }
         }
-    
+
         return longestWord;
     }
 
@@ -339,22 +464,22 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using whitespace as delimiter
         String[] words = text.split("\\W+");
-    
+
         // Create a map to store word frequencies
         Map<String, Integer> wordFrequencies = new HashMap<>();
-    
+
         // Populate the map with word frequencies
         for (String word : words) {
             wordFrequencies.put(word, wordFrequencies.getOrDefault(word, 0) + 1);
         }
-    
+
         // Initialize variables to track the most common word and its frequency
         String mostCommonWord = "";
         int maxFrequency = 0;
-    
+
         // Find the most common word
         for (Map.Entry<String, Integer> entry : wordFrequencies.entrySet()) {
             if (entry.getValue() > maxFrequency) {
@@ -362,7 +487,7 @@ public class TextAnalyzer {
                 maxFrequency = entry.getValue();
             }
         }
-    
+
         return mostCommonWord;
     }
 
@@ -376,13 +501,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using a regular expression that includes only alphabetic characters as delimiters
         String[] words = text.split("\\W+");
-    
+
         // Initialize a list to store palindromes
         List<String> palindromes = new ArrayList<>();
-    
+
         // Iterate through each word in the text
         for (String word : words) {
             // Remove punctuation from the word
@@ -392,7 +517,7 @@ public class TextAnalyzer {
                 palindromes.add(word);
             }
         }
-    
+
         return palindromes;
     }
 
@@ -400,7 +525,7 @@ public class TextAnalyzer {
     private boolean isPalindrome(String word) {
         int left = 0;
         int right = word.length() - 1;
-    
+
         while (left < right) {
             if (word.charAt(left) != word.charAt(right)) {
                 return false;
@@ -408,7 +533,7 @@ public class TextAnalyzer {
             left++;
             right--;
         }
-    
+
         return true;
     }
 
@@ -422,13 +547,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Split the text into words using whitespace as delimiter
         String[] words = text.split("\\W+");
-    
+
         // Initialize a variable to store the shortest word
         String shortestWord = words[0];
-    
+
         // Iterate through each word in the text
         for (String word : words) {
             // Check if the current word is shorter than the current shortest word
@@ -436,7 +561,7 @@ public class TextAnalyzer {
                 shortestWord = word;
             }
         }
-    
+
         return shortestWord;
     }
 
@@ -450,13 +575,13 @@ public class TextAnalyzer {
         if (text == null || text.isEmpty()) {
             throw new IllegalArgumentException("Text cannot be null or empty.");
         }
-    
+
         // Convert the text to lowercase to ignore case sensitivity
         text = text.toLowerCase();
-    
+
         // Initialize an array to track the presence of each letter
         boolean[] alphabet = new boolean[26];
-    
+
         // Iterate through each character in the text
         for (char c : text.toCharArray()) {
             // Check if the character is a letter
@@ -465,14 +590,14 @@ public class TextAnalyzer {
                 alphabet[c - 'a'] = true;
             }
         }
-    
+
         // Check if all letters of the alphabet are present
         for (boolean present : alphabet) {
             if (!present) {
                 return false;
             }
         }
-    
+
         return true;
     }
 }
