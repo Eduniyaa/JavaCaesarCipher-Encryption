@@ -21,7 +21,7 @@ The TextAnalyzer program is a Java program designed to analyze text input and pr
 
 ## 1. Introduction
 
-The TextAnalyzer program is a collaborative effort of six individuals who worked together to develop a Java application that provides various text analysis functionalities. The program aims to offer a convenient tool for analyzing text input, making it easier for users to perform common text analysis tasks efficiently.
+The TextAnalyzer program is a collaborative effort of five individuals who worked together to develop a Java application that provides various text analysis functionalities. The program aims to offer a convenient tool for analyzing text input, making it easier for users to perform common text analysis tasks efficiently.
 
 ---
 
@@ -153,7 +153,7 @@ For any inquiries or feedback, please contact the members of the development tea
     - Email: filimon.haftomh@haftomhgmail.com
     - GitHub: [phila-hh](https://github.com/phila-hh)
   - **Nardos Zemariam**
-    - Email:nardoszemariamtesfay12@gmail.com
+    - Email: nardoszemariamtesfay12@gmail.com
     - GitHub: [nardoszemariamtesfay](https://github.com/nardoszemariamtesfay)
 
 Feel free to reach out for assistance, feedback, or collaboration!
